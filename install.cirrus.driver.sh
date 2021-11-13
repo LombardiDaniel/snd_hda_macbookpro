@@ -27,6 +27,9 @@ if [ -d /usr/src/linux-headers-$(uname -r) ]; then
 elif [ -d /usr/src/kernels/$(uname -r) ]; then
 	# Fedora Based Distro
 	:
+elif [ -d /usr/lib/modules/$(uname -r) ]; then
+        # Arch Based Distro
+        :
 else
 	echo "linux kernel headers not found in /usr/src:"
 	echo "Debian (eg Ubuntu): /usr/src/linux-headers-$(uname -r)"
